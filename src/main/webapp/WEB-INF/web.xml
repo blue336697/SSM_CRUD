@@ -11,7 +11,7 @@
     <param-value>classpath:application.xml</param-value>
   </context-param>
 
-  <!-- 读取Spring上下文的监听器 -->
+   <!--读取Spring上下文的监听器-->
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>

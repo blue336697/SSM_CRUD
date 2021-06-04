@@ -3,8 +3,10 @@ package com.lhjitem.dao;
 import com.lhjitem.pojo.Employee;
 import com.lhjitem.pojo.EmployeeExample;
 import java.util.List;
-import org.apache.ibatis.annotations.Param;
 
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+@Mapper
 public interface EmployeeMapper {
     long countByExample(EmployeeExample example);
 

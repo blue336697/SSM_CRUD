@@ -10,10 +10,18 @@
     <param-name>contextConfigLocation</param-name>
     <param-value>classpath:application.xml</param-value>
   </context-param>
-  
+
+  <!-- 读取Spring上下文的监听器 -->
   <listener>
-    <listener-class>org.springframework.web.context.ConfigurableWebApplicationContext</listener-class>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
+  <!-- Spring和web项目集成end -->
+
+  <!-- 防止Spring内存溢出监听器 -->
+  <listener>
+    <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+  </listener>
+
 
   <!--配置SpringMVC的前端控制器，拦截所有请求-->
   <servlet>

@@ -63,7 +63,7 @@ public class MvcTest {
         //获取员工数据，因为我们一并将员工信息包装到了pageInfo
         List<Employee> list = pageInfo.getList();
         for (Employee employee : list) {
-            System.out.println();
+            System.out.println(employee);
         }
     }
 

@@ -12,7 +12,8 @@ import java.util.List;
 public class EmployeeService {
     //调用dao层
     @Autowired
-    EmployeeMapper employeeMapper;
+    private EmployeeMapper employeeMapper;
+
 
     /**
      * 查询所有员工

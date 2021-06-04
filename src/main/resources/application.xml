@@ -17,6 +17,7 @@
     <!--配置扫描各种组件的context-->
     <context:component-scan base-package="com.lhjitem">
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>
     </context:component-scan>
 
     <!--首先配置数据库连接池和数据源，由jar包可知，博主用的时阿里的druid-->

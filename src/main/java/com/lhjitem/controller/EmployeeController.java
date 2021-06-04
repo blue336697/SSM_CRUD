@@ -19,7 +19,8 @@ import java.util.List;
 public class EmployeeController {
 
     @Autowired
-    EmployeeService employeeService;
+    private EmployeeService employeeService;
+
 
     /**
      * 查询员工信息（分页查询）

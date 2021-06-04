@@ -1,0 +1,29 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd">
+    <!--开启注解扫描，只扫描控制器-->
+    <context:component-scan base-package="com.lhjitem" use-default-filters="false">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+    <!--配置拦截器，方便页面返回-->
+    <!--配置映射(视图)解析器:如何将控制器返回的结果字符串，转换为一个物理的视图文件-->
+    <bean id="irvr" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!--prefix（前缀）是代表跳转页面文件的所在目录-->
+        <property name="prefix" value="/WEB-INF/views/"></property>
+        <!--suffix（后缀）表示文件的后缀名-->
+        <property name="suffix" value=".jsp"></property>
+    </bean>
+
+    <!--两个标准配置-->
+    <!--将springMVC不能处理的请求交给tomcat-->
+    <mvc:default-servlet-handler/>
+    <!--能支持springMVC一些高级的功能，从此走上开挂之路，
+    例如JSR303校验、快捷的ajax，但归根结底还是为了能使动态资源管用-->
+    <mvc:annotation-driven></mvc:annotation-driven>
+</beans>

@@ -14,7 +14,10 @@
     </typeAliases>
     <!--配置分页插件，plugins有位置要求，写在typeAliases标签后面-->
     <plugins>
-        <plugin interceptor="com.github.pagehelper.PageInterceptor"></plugin>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <!--调整分页参数合理化，最后一页之后不会出现-1页，而首页之前也不会出现+1-->
+            <property name="reasonable" value="true"/>
+        </plugin>
     </plugins>
 
 </configuration>

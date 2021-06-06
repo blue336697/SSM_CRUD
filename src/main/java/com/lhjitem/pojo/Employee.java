@@ -1,12 +1,23 @@
 package com.lhjitem.pojo;
 
+import javax.validation.constraints.Pattern;
+
 public class Employee {
     private Integer empId;
 
+    /*这里之所以要用正则表达式校验，是因为我们前端也使用了十分复杂的校验规则，要做到统一规则
+    *   所以在这里要用Pattern来自定义
+    *   切记java代码中的正则表达式没有/
+    *   还有在这里其实idea帮我们做了转义工作，在js中的正则表达式中转义字符是一个\，但在这个需要将一个\变成两个\\
+    *   原因是\在这里拥有了二义性
+    * */
+    @Pattern(regexp = "(^[\\\\u4e00-\\\\u9fa5a-zA-Z][\\\\u4e00-\\\\u9fa5a-zA-Z]+$)|(^[\u2E80-\u9FFF]{2,5})"
+            , message = "用户名首字母为中英文，至少两个字符")
     private String empName;
 
     private String gender;
 
+    @Pattern(regexp = "^([a-zA-Z0-9]+[_|_|\\-|.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|_|.]?)*[a-zA-Z0-9]+\\.[a-zA-Z]{2,3}$")
     private String email;
 
     private Integer dId;

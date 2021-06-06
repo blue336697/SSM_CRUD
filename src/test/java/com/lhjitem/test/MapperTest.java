@@ -11,8 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.util.UUID;
-
 /**
  * 测试dao层是否能正常工作
  * 这里我们使用spring中的spring-test来测试，让mapper自动注入IOC容器中
@@ -46,7 +44,7 @@ public class MapperTest {
      */
     @Test
     public void testAddEmp(){
-        employeeMapper.insertSelective(new Employee(null,"张三","男","abc@qq.com",1));
+        /*employeeMapper.insertSelective(new Employee(null,"张三","男","abc@qq.com",1));
         employeeMapper.insertSelective(new Employee(null,"李四","男","dfg@qq.com",2));
         employeeMapper.insertSelective(new Employee(null,"王五","男","hij@qq.com",3));
         employeeMapper.insertSelective(new Employee(null,"杨六","女","klm@qq.com",4));
@@ -56,7 +54,8 @@ public class MapperTest {
             String name = UUID.randomUUID().toString().substring(0,5)+ i;
             mapper.insertSelective(new Employee(null,name,"女",name+"@163.com",5));
 
-        }
+        }*/
+        employeeMapper.insertSelective(new Employee(null,"颜子淇","男","yzq@qq.com",1));
 
     }
 }
